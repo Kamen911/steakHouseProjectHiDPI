@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&subset=cyrillic');
+
+$white:#fff;
+$black: #000;
+$primary-color: #e6932e;
+$heading-color: #3d2924;
+$font-color: #7b7b7b;
+$dark: #252529;
+$bg-dark: #292929;
+
+body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; font-style: 1rem; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { width: 100%; vertical-align: middle; border-style: none; image-rendering: -webkit-optimize-contrast; }
+input { border: none; }
+input:focus { outline: none; }
+p {font-size: 1.05rem; }
+a { color: inherit; text-decoration: none; background-color: transparent; }
+a:hover { color: inherit; text-decoration: none; }
+
+
+// backgroound opacity 30%
+
+// header
+header {
+   background-color: rgba(0, 0, 0, 0.3);
+}
+// end header
