@@ -54,18 +54,23 @@ h2, h3, h4, h5, h6 {
   color: #3d2924;
   text-transform: uppercase; }
 
+.hamburger-on {
+  overflow: hidden; }
+
 header {
   font-size: 1rem;
   line-height: 1rem;
   width: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1; }
+  z-index: 20; }
   header .navbar {
     text-transform: uppercase;
     font-weight: bold; }
-    header .navbar .navbar-brand img {
-      max-width: 158px; }
+    header .navbar .navbar-brand {
+      z-index: 21; }
+      header .navbar .navbar-brand img {
+        max-width: 158px; }
     header .navbar .navbar-collapse {
       justify-content: flex-end; }
       header .navbar .navbar-collapse .navbar-nav .nav-item {
@@ -76,9 +81,15 @@ header {
           color: #e6932e; }
       header .navbar .navbar-collapse .navbar-nav .nav-link:last-child {
         margin-left: 0.3rem; }
-      header .navbar .navbar-collapse .navbar-nav .laguage-switch {
+      header .navbar .navbar-collapse .navbar-nav .language-switch {
+        display: inline-block;
         border: 1px solid #fff;
-        font-weight: 200; }
+        font-weight: 200;
+        padding: 0.5rem; }
+    header .navbar .navbar-toggler {
+      z-index: 21; }
+    header .navbar .navbar-collapse.show {
+      top: 0; }
 
 .showcase {
   position: relative;
@@ -121,7 +132,9 @@ header {
       height: 100%;
       display: block; }
       .showcase .showcase-scroll-button a:hover {
-        opacity: .5; }
+        opacity: 0.5; }
+        .showcase .showcase-scroll-button a:hover span {
+          border-color: #e6932e; }
       .showcase .showcase-scroll-button a span {
         position: absolute;
         top: 0;
@@ -193,6 +206,8 @@ header {
 
 .meat-menu {
   padding: 4.875rem 0; }
+  .meat-menu > .container {
+    text-align: center; }
   .meat-menu .meat-menu-info {
     text-align: center; }
     .meat-menu .meat-menu-info p {
@@ -206,13 +221,13 @@ header {
       background-size: 25px 25px;
       background-image: url("../img/icons/fork-and-knife-in-cross-red.svg"); }
   .meat-menu .meat-menu-wrap {
-    border: none; }
+    border: none;
+    display: inline-flex; }
     .meat-menu .meat-menu-wrap .nav-item:first-child .nav-link {
       padding-left: 0; }
     .meat-menu .meat-menu-wrap .nav-item:last-child .nav-link {
       padding-right: 0; }
     .meat-menu .meat-menu-wrap .nav-link {
-      width: 100%;
       padding: 0 0.9rem;
       display: flex;
       flex-direction: column;
@@ -226,7 +241,7 @@ header {
           display: block;
           width: 62px;
           height: 62px;
-          background-size: 62px 62px;
+          background-size: 100% 100%;
           background-repeat: no-repeat; }
         .meat-menu .meat-menu-wrap .nav-link .icon-wrap .beef {
           background-image: url("../img/icons/menu-svg/beef.svg"); }
@@ -367,7 +382,51 @@ footer .footer-bottom {
   footer .footer-top > .container {
     display: grid;
     grid-template-columns: 2.4fr 1.7fr 2fr 1.2fr; } }
+@media (max-width: 1200px) {
+  main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap {
+    padding: 1rem; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap .icon {
+      width: 57px;
+      height: 57px; } }
 @media (max-width: 992px) {
+  header .navbar .nav-item {
+    font-size: 1.5rem;
+    line-height: 2rem; }
+  header .navbar .navbar-collapse {
+    position: fixed;
+    display: flex;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 15vh;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10;
+    transition: top .1s ease;
+    -webkit-transition: top .1s ease;
+    overflow: hidden; }
+    header .navbar .navbar-collapse .navbar-nav {
+      padding-top: 3rem;
+      width: 100%;
+      height: 100%;
+      display: block; }
+  header .navbar .language-wrap {
+    margin-top: 2rem; }
+    header .navbar .language-wrap .language-switch {
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      line-height: 1rem; }
+
+  main .meat-menu .meat-menu-wrap .nav-item .nav-link {
+    padding: 0 0.5rem; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap {
+      padding: 0.86rem; }
+      main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap .icon {
+        width: 42px;
+        height: 42px; }
+
   footer .footer-top > .container {
     display: grid;
     grid-template-columns: 2fr 1fr; } }
@@ -381,10 +440,31 @@ footer .footer-bottom {
     main .showcase .lead-wrap .star {
       margin: 0.5rem; }
     main .showcase .lead-wrap h2 {
-      font-size: 2rem; } }
+      font-size: 2rem; }
+  main .meat-menu .meat-menu-wrap .nav-item .nav-link {
+    padding: 0 0.2rem; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap {
+      padding: 0.56rem; }
+      main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap .icon {
+        width: 35px;
+        height: 35px; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-info {
+      margin-top: 0.3rem;
+      font-size: 0.8rem; } }
 @media (max-width: 576px) {
   main .showcase .lead-wrap h1 {
     font-size: 2.5rem; }
+  main .meat-menu .meat-menu-wrap .nav-item .nav-link {
+    padding: 0 0.11rem; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap {
+      padding: 0.5rem; }
+      main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap .icon {
+        width: 22px;
+        height: 22px; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-info {
+      margin-top: 0.2rem;
+      font-size: 0.6rem;
+      line-height: inherit; }
 
   footer .footer-top > .container {
     display: grid;
@@ -410,6 +490,16 @@ footer .footer-bottom {
   main .showcase .lead-wrap h1 {
     display: flex;
     flex-direction: column; } }
+@media (max-width: 374px) {
+  main .meat-menu .meat-menu-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 0.5rem; }
+    main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap {
+      padding: 0.8rem; }
+      main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap .icon {
+        width: 35px;
+        height: 35px; } }
 @media (max-height: 800px) {
   main .showcase .lead-wrap {
     padding-top: 13%; } }

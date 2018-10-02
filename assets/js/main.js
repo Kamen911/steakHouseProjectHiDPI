@@ -14,7 +14,10 @@
 			});
 		});
 
-
+		// toggle class on hamburgegr to overflow:hidden on body
+		$('.navbar-toggler').on('click', function () {
+			$('body').toggleClass('hamburger-on');
+		});
 
    });
 })(jQuery);
