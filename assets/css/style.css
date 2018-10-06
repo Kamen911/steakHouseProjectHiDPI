@@ -125,7 +125,7 @@ header {
     .showcase .lead-wrap h2::before, .showcase .lead-wrap h2::after {
       content: '';
       display: block;
-      width: 142px;
+      width: 76%;
       height: 11px;
       position: absolute;
       top: calc(50% - 5.5px);
@@ -369,33 +369,36 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1.7rem; }
+    grid-gap: 1.875em; }
     .gallery .gallery-content .gallery-main-img {
       grid-row-end: span 2; }
-    .gallery .gallery-content .gallery-secondary-img img {
+    .gallery .gallery-content a img {
       height: 100%; }
 
 footer .footer-top {
   padding: 4rem 0 2rem;
   background: #000; }
-  footer .footer-top .footer-col-wrap {
-    margin-bottom: 2rem; }
-    footer .footer-top .footer-col-wrap .footer-logo {
-      width: 9.375em; }
-    footer .footer-top .footer-col-wrap h5 {
-      color: #fff; }
-    footer .footer-top .footer-col-wrap a {
-      color: #b4b4b4;
-      font-size: 1.25em;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300; }
-      footer .footer-top .footer-col-wrap a:hover {
-        color: #e6932e; }
+  footer .footer-top .footer-top-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr; }
+    footer .footer-top .footer-top-wrapper .footer-col-wrap {
+      margin-bottom: 2rem; }
+      footer .footer-top .footer-top-wrapper .footer-col-wrap .footer-logo {
+        width: 9.375em; }
+      footer .footer-top .footer-top-wrapper .footer-col-wrap h5 {
+        color: #fff; }
+      footer .footer-top .footer-top-wrapper .footer-col-wrap a {
+        color: #b4b4b4;
+        font-size: 1.25em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300; }
+        footer .footer-top .footer-top-wrapper .footer-col-wrap a:hover {
+          color: #e6932e; }
 footer .footer-bottom {
   color: #b4b4b4;
   padding: 1rem 0;
   background: #292929; }
-  footer .footer-bottom > .container {
+  footer .footer-bottom .footer-bottom-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
   footer .footer-bottom .copyright {
@@ -464,16 +467,14 @@ footer .footer-bottom {
       padding: 0.86rem; }
       main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap .icon {
         width: 42px;
-        height: 42px; }
-
-  footer .footer-top > .container {
-    display: grid;
-    grid-template-columns: 2fr 1fr; } }
+        height: 42px; } }
 @media (max-width: 768px) {
   main .showcase .lead-wrap h1 {
     font-size: 3em;
     display: flex;
     flex-direction: column; }
+  main .showcase .lead-wrap h2::before, main .showcase .lead-wrap h2::after {
+    display: none; }
   main .meat-menu .meat-menu-wrap .nav-item .nav-link {
     padding: 0 0.2rem; }
     main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-wrap {
@@ -483,7 +484,9 @@ footer .footer-bottom {
         height: 35px; }
     main .meat-menu .meat-menu-wrap .nav-item .nav-link .icon-info {
       margin-top: 0.3rem;
-      font-size: 0.8em; } }
+      font-size: 0.8em; }
+  main .gallery .gallery-content {
+    grid-template-columns: 1fr; } }
 @media (max-width: 576px) {
   main .meat-menu .meat-menu-wrap {
     display: grid;
@@ -495,16 +498,12 @@ footer .footer-bottom {
         width: 35px;
         height: 35px; }
 
-  footer .footer-top > .container {
-    display: grid;
+  footer .footer-top .footer-top-wrapper {
     grid-template-columns: 1fr; }
-    footer .footer-top > .container .footer-col-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    footer .footer-top .footer-top-wrapper .footer-col-wrap {
       text-align: center; }
-  footer .footer-bottom > .container {
-    display: block; }
+  footer .footer-bottom .footer-bottom-wrapper {
+    grid-template-columns: 1fr; }
   footer .footer-bottom .copyright {
     margin-bottom: 1rem;
     justify-content: center; }
@@ -512,7 +511,7 @@ footer .footer-bottom {
     justify-content: center;
     padding-bottom: 0.5rem; } }
 @media (min-width: 992px) {
-  footer .footer-top > .container {
+  footer .footer-top .footer-top-wrapper {
     display: grid;
     grid-template-columns: 2.4fr 1.7fr 2fr 1.2fr; } }
 @media (min-width: 1200px) {
